@@ -1,0 +1,34 @@
+# This is Git's per-user configuration file.
+[user]
+	name = bluelinecoding
+	email = tom@blueline-coding.co.uk
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias] 
+    cm = commit -m 
+    co = checkout 
+    br = branch 
+    ci = commit 
+    st = status --long --branch 
+    unstage = reset HEAD -- 
+    lg = log --pretty='%Cred%h%Creset |%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --max-count=25 
+    lgg = log --pretty='%Cred%h%Creset |%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph 
+    sb = show-branch 
+    branch-name = "!git rev-parse --abbrev-ref HEAD" 
+    rb = "!git fetch origin $(git branch-name) && git reset --hard origin/$(git branch-name) && git clean -df"
+    web = browse
+[push]
+	default = current
+[core]
+	editor = vim
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED

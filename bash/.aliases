@@ -1,0 +1,30 @@
+# Shortcuts
+alias v=nvim
+alias vi=nvim
+alias vim=nvim
+alias g=hub
+alias git=hub
+
+alias m="make"
+alias t="make test"
+
+alias dev='cd $HOME/Documents/Development/'
+
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+	colorflag="--color"
+else # OS X `ls`
+	colorflag="-G"
+fi
+
+# List all files colorized in long format, including dot files
+alias l="ls -1F"
+alias h="history 1"
+alias o="open ."
+
+# Always use color output for `ls`
+alias ls="command ls ${colorflag}"
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
