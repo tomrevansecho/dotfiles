@@ -22,6 +22,7 @@ cask "spotify"
 cask "android-studio"
 cask "charles"
 cask "onedrive"
+cask "docker"
 
 mas "Microsoft OneNote", id: 784801555
 mas "Xcode", id: 497799835
